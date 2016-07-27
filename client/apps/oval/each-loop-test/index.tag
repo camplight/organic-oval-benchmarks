@@ -1,6 +1,5 @@
 <each-loop-test>
   <script>
-    require('bind-tag')(tag)
     require('./loop-item')
 
     tag.refresh = function () {

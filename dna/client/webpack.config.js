@@ -9,14 +9,23 @@ module.exports = {
   },
   'plugins': [
     new webpack.ProvidePlugin({
-      'react': path.join(process.cwd(), 'node_modules/react-dom'),
-      'riot': 'riot'
+      'react': 'react-dom',
+      'riot': 'riot',
+      'oval': 'organic-oval'
     }),
     new ExtractTextPlugin('[name].css')
   ],
   'module': {
     'preLoaders': [
-      { test: /\.rtag$/, exclude: /node_modules/, loader: 'riotjs-loader' }
+      { test: /\.rtag$/, exclude: /node_modules/, loader: 'riotjs-loader' },
+      {
+        test: /\.tag$/,
+        exclude: /node_modules/,
+        loaders: [
+          'organic-oval/webpack/oval-loader',
+          'organic-oval/webpack/oval-control-statements-loader'
+        ]
+      }
     ],
     'loaders': [
       {
@@ -35,6 +44,18 @@ module.exports = {
         query: {
           plugins: ['transform-es2015-arrow-functions'],
           presets: ['es2015', 'react']
+        }
+      },
+      {
+        test: /\.js$|\.tag$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        query: {
+          plugins: [
+            'transform-es2015-arrow-functions',
+            ['transform-react-jsx', { pragma: 'createElement' }]
+          ],
+          presets: ['es2015']
         }
       }
     ]

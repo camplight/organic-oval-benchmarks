@@ -9,8 +9,10 @@
       rendered = true
     })
   </script>
-  <div>{tag.value}</div>
-  <each m in {tag.items}>
-    <span>{m}</span>
-  </each>
+  <div>
+    {tag.value}
+    <each m in {tag.items}>
+      <span>{m}</span>
+    </each>
+  </div>
 </loop-item>
