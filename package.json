@@ -1,0 +1,73 @@
+{
+  "name": "organic-oval-benchmarks",
+  "private": true,
+  "version": "1.0.0",
+  "description": "organic-oval benchmarks",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "develop": "angel develop",
+    "watch": "angel watch",
+    "build": "angel build"
+  },
+  "author": "Camplight",
+  "dependencies": {
+    "angelabilities-exec": "0.1.0",
+    "angelabilities-package-scripts": "0.1.0",
+    "babel-core": "^6.11.4",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-es2015-arrow-functions": "^6.8.0",
+    "babel-plugin-transform-react-jsx": "^6.8.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "body-parser": "^1.7.0",
+    "bunyan": "~1.0.1",
+    "cookie-parser": "^1.3.2",
+    "domready": "^1.0.8",
+    "ejs": "^2.3.3",
+    "express": "^4.12.2",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "globby": "^5.0.0",
+    "loader-utils": "^0.2.15",
+    "lodash": "^4.4.0",
+    "method-override": "^2.3.1",
+    "organic-angel": "^0.3.2",
+    "organic-bunyan-output": "0.0.4",
+    "organic-console": "0.0.2",
+    "organic-dna-loader": "^0.0.3",
+    "organic-express-response": "0.0.2",
+    "organic-express-routes": "^0.1.1",
+    "organic-express-server": "0.0.2",
+    "organic-express-static": "0.0.2",
+    "organic-express-staticpages": "0.0.3",
+    "organic-nucleus": "^1.0.x",
+    "organic-plasma": "^1.1.x",
+    "organic-plasma-feedback": "^1.0.0",
+    "organic-stem-devtools": "^0.2.3",
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1",
+    "riot": "^2.5.0",
+    "riotjs-loader": "^3.0.0",
+    "string-template": "^1.0.0",
+    "webpack": "^1.13.0",
+    "webpack-dna-loader": "0.0.1"
+  },
+  "devDependencies": {
+    "angelscripts-help": "0.1.0",
+    "angelscripts-stack-use": "^0.1.4",
+    "bunyan-format": "^0.2.1",
+    "nodemon": "^1.8.1"
+  },
+  "engines": {
+    "node": ">= 4.2.3"
+  },
+  "stack-upgrades": {
+    "core": "0.1.0",
+    "devtools": "0.2.2",
+    "devtools-client": "0.2.2",
+    "devtools-webpack": "0.2.2",
+    "devtools-assets": "0.2.2",
+    "devtools-nodemon": "0.2.2",
+    "ejs-pages": "0.1.0"
+  }
+}

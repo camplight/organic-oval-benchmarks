@@ -1,0 +1,14 @@
+<item>
+  <script>
+    var tag = this
+    var rendered = false
+    tag.items = [1, 2, 3]
+    tag.shouldUpdate = function () {
+      var result = !rendered
+      rendered = true
+      return result
+    }
+  </script>
+  <div>{opts.value}</div>
+  <span each={m in items}>{m}</span>
+</item>
