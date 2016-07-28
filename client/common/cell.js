@@ -1,5 +1,4 @@
 module.exports = function (options) {
-  var _ = require('lodash')
   var Plasma = require('organic-plasma')
 
   window.plasma = new Plasma()
@@ -13,7 +12,6 @@ module.exports = function (options) {
   require('domready')(function () {
     options.requireTags()
     if (options.engine === 'oval') {
-
       // provide plasma
       oval.init(window.plasma)
 
