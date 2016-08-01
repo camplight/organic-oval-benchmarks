@@ -37,7 +37,7 @@
   <button onclick={tag.refresh}>refresh</button>
   <each item in {tag.state.items}>
     <div id={item.id} class={item.value}>
-      <loop-item ref-value={item.value}></loop-item>
+      <loop-item prop-value={item.value}></loop-item>
       <button onclick={tag.removeItem(item)}>remove</button>
     </div>
   </each>
