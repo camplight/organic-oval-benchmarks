@@ -42,5 +42,10 @@ module.exports = function (options) {
         components: result
       })
     }
+
+    if (options.engine === 'ractive') {
+      var Component = result[0]
+      new Component({ el: document.body })
+    }
   })
 }

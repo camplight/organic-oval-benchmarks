@@ -4,7 +4,7 @@ var path = require('path')
 
 module.exports = {
   'resolve': {
-    'extensions': ['', '.webpack.js', '.web.js', '.tag', '.js', '.jsx', '.rtag', '.vue'],
+    'extensions': ['', '.webpack.js', '.web.js', '.tag', '.js', '.jsx', '.rtag', '.vue', '.html'],
     'modulesDirectories': ['web_modules', 'node_modules', 'client/common']
   },
   'plugins': [
@@ -33,6 +33,7 @@ module.exports = {
         test: /\.vue$/, // a regex for matching all files that end in `.vue`
         loader: 'vue'   // loader to use for matched files
       },
+      { test: /\.html$/, loader: 'ractive-component' },
       {
         test: /\.js$|\.rtag$/,
         exclude: /node_modules/,

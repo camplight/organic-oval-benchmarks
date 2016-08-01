@@ -26,9 +26,25 @@ Open one by one and see console's output respectively:
 * React 15
   * mount & render: 6333.673ms
   * re-render: 1934.954ms
-* Riot 2
-  * mount & render: 12412.204ms
-  * re-render: 1820.034ms
+  * remove item: 1395.817ms
+  * add item: 1570.665ms
+* Riot 3 alpha 5
+  * mount & render: N/A
+  * re-render: 694.627ms
+  * remove item: 1604.847ms
+  * add item: 518.724ms
+* VueJS
+  * mount & render: 8674.924ms
+  * re-render: N/A
+  * remove item: N/A
+  * add item: N/A
+* RactiveJS
+  * mount & render: 5994.579ms
+  * re-render: 1045.420ms
+  * remove item: 5201.263ms
+  * add item: 1176.569ms
 * Oval
   * mount & render: 1375.766ms
   * re-render: 775.713ms
+  * remove item: 796.941ms
+  * add item: 699.663ms

@@ -1,0 +1,45 @@
+<h1>Each loop test</h1>
+<button on-click="addItem()">add</button>
+<button on-click="refresh()">refresh</button>
+{{#items}}
+  <div id={{id}} class={{value}}>
+    <loop-item value={{value}} />
+    <button on-click="removeItem(this)">remove</button>
+  </div>
+{{/items}}
+
+<script>
+  var items = []
+  for (var i = 0; i < 10000; i++) {
+    items.push({value: i, id: Math.random()})
+  }
+  component.exports = {
+    data: function() { return { items: items } },
+    components: {
+      'loop-item': require('./loop-item')
+    },
+    onconstruct: function () {
+      console.time('eachLoopList')
+    },
+    oncomplete: function () {
+      console.timeEnd('eachLoopList')
+    },
+    onupdate: function () {
+      console.timeEnd('eachLoopList')
+    },
+    refresh: function () {
+      console.time('eachLoopList')
+      this.update()
+    },
+    addItem: function () {
+      console.time('eachLoopList')
+      items.push({id: Math.random(), value: items.length})
+      this.update()
+    },
+    removeItem: function (item) {
+      console.time('eachLoopList')
+      items.splice(items.indexOf(item), 1)
+      this.update()
+    }
+  }
+</script>

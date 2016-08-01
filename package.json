@@ -48,6 +48,8 @@
     "organic-plasma": "^1.1.x",
     "organic-plasma-feedback": "^1.0.0",
     "organic-stem-devtools": "^0.2.3",
+    "ractive": "^0.7.3",
+    "ractive-component-loader": "^1.2.0",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
     "riot": "^3.0.0-alpha.5",

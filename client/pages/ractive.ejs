@@ -1,90 +1,11 @@
-<!doctype html>
-<html lang='en-GB'>
-<head>
-  <meta charset='utf-8'>
-  <title>Ractive benchmark</title>
-</head>
-
-<body>
-  <h1>Ractive test</h1>
-
-  <div id='container'></div>
-
-  <script id='template' type='text/ractive'>
-    <eachLoopList />
-  </script>
-
-  <script id='eachLoopList' type='text/ractive'>
-    <button on-click="addItem()">add</button>
-    <button on-click="refresh()">refresh</button>
-    {{#items}}
-      <div id={{id}} class={{value}}>
-        <eachLoopListItem value={{value}} />
-        <button on-click="removeItem(this)">remove</button>
-      </div>
-    {{/items}}
-  </script>
-
-  <script id='eachLoopListItem' type='text/ractive'>
-    {{value}}
-    {{#subitems}}
-      <span>{{this}}</span>
-    {{/subitems}}
-  </script>
-
-  <script src='http://cdn.ractivejs.org/latest/ractive.min.js'></script>
-  <script>
-    var items = []
-    for (var i = 0; i < 10000; i++) {
-      items.push({value: i, id: Math.random()})
-    }
-    var ractive = new Ractive({
-      el: '#container',
-
-      components: {
-        eachLoopList: Ractive.extend({
-          template: '#eachLoopList',
-          data: function () { return { items: items } },
-          components: {
-            eachLoopListItem: Ractive.extend({
-              template: '#eachLoopListItem',
-              isolated: true,
-              data: function () { return { subitems: [1, 2, 3] } }
-            })
-          },
-          onconstruct: function () {
-            console.time('eachLoopList')
-          },
-          oncomplete: function () {
-            console.timeEnd('eachLoopList')
-          },
-          onupdate: function () {
-            console.timeEnd('eachLoopList')
-          },
-          refresh: function () {
-            console.time('eachLoopList')
-            this.update()
-          },
-          addItem: function () {
-            console.time('eachLoopList')
-            items.push({id: Math.random(), value: items.length})
-            this.update()
-          },
-          removeItem: function (item) {
-            console.time('eachLoopList')
-            items.splice(items.indexOf(item), 1)
-            this.update()
-          }
-        })
-      },
-
-      template: '#template'
-    })
-    ractive.DEBUG = false
-    console.time('complete')
-    ractive.on('complete', function () {
-      console.timeEnd('complete')
-    })
-  </script>
-</body>
+<html>
+  <head>
+    <title>ractive benchmark</title>
+    <script src="<%= timestampUrl('/public/release/ractive/index.bundle.js') %>"></script>
+  </head>
+  <body>
+    <div>
+      <landing-view></landing-view>
+    </div>
+  </body>
 </html>
