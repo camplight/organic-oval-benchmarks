@@ -10,7 +10,7 @@
     })
   </script>
   <div>
-    {tag.value}
+    {tag.props.value}
     <each m in {tag.items}>
       <span>{m}</span>
     </each>
