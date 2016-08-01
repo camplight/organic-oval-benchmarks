@@ -4,14 +4,15 @@ var path = require('path')
 
 module.exports = {
   'resolve': {
-    'extensions': ['', '.webpack.js', '.web.js', '.tag', '.js', '.jsx', '.rtag'],
+    'extensions': ['', '.webpack.js', '.web.js', '.tag', '.js', '.jsx', '.rtag', '.vue'],
     'modulesDirectories': ['web_modules', 'node_modules', 'client/common']
   },
   'plugins': [
     new webpack.ProvidePlugin({
       'react': 'react-dom',
       'riot': 'riot',
-      'oval': 'organic-oval'
+      'oval': 'organic-oval',
+      'Vue': 'vue'
     }),
     new ExtractTextPlugin('[name].css')
   ],
@@ -28,6 +29,10 @@ module.exports = {
       }
     ],
     'loaders': [
+      {
+        test: /\.vue$/, // a regex for matching all files that end in `.vue`
+        loader: 'vue'   // loader to use for matched files
+      },
       {
         test: /\.js$|\.rtag$/,
         exclude: /node_modules/,

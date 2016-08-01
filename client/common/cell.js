@@ -11,7 +11,7 @@ module.exports = function (options) {
   }
 
   require('domready')(function () {
-    options.requireTags()
+    var result = options.requireTags()
     if (options.engine === 'oval') {
 
       // provide plasma
@@ -34,6 +34,13 @@ module.exports = function (options) {
       } else {
         riot.mount('*')
       }
+    }
+
+    if (options.engine === 'vue') {
+      new Vue({
+        el: 'body',
+        components: result
+      })
     }
   })
 }
