@@ -15,7 +15,6 @@
       return function () {
         tag.state.items.splice(tag.state.items.indexOf(item), 1)
         tag.update()
-        console.log('removed and updated', tag.state.items.length)
       }
     }
 
