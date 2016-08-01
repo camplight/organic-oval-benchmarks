@@ -50,7 +50,7 @@
     "organic-stem-devtools": "^0.2.3",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
-    "riot": "^2.5.0",
+    "riot": "^3.0.0-alpha.5",
     "riotjs-loader": "^3.0.0",
     "string-template": "^1.0.0",
     "vue": "^1.0.26",

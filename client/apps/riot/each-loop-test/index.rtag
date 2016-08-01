@@ -29,6 +29,7 @@ require('./item')
     })
     tag.on('updated', function () {
       console.timeEnd('each-loop')
+      console.timeEnd('each-loop-mount')
     })
   </script>
   <h1>Each Loop test</h1>
