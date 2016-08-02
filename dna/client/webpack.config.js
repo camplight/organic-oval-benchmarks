@@ -1,15 +1,15 @@
 var webpack = require('webpack')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var path = require('path')
 
 module.exports = {
   'resolve': {
     'extensions': ['', '.webpack.js', '.web.js', '.tag', '.js', '.jsx', '.rtag', '.vue', '.html'],
-    'modulesDirectories': ['web_modules', 'node_modules', 'client/common']
+    'modulesDirectories': ['web_modules', 'node_modules', 'client/common'],
+    'alias': {
+      'ember': path.join(process.cwd(), './client/apps/ember/inject'),
+      'app': path.join(process.cwd(), './client/apps/ember')
+    }
   },
-  'plugins': [
-    new ExtractTextPlugin('[name].css')
-  ],
   'module': {
     'preLoaders': [
       { test: /\.rtag$/, exclude: /node_modules/, loader: 'riotjs-loader' },
@@ -57,7 +57,25 @@ module.exports = {
           ],
           presets: ['es2015']
         }
+      },
+      {
+        test: /\.hbs$/,
+        include: /client\/apps\/ember\/templates/,
+        loader: 'ember-webpack-loaders/htmlbars-loader',
+        query: {
+          appPath: './client/apps/ember'
+        }
+      },
+      {
+        test: /client\/apps\/\/ember\/main\.js/,
+        loader: 'ember-webpack-loaders/inject-templates-loader!ember-webpack-loaders/inject-modules-loader',
+        query: {
+          appPath: './client/apps/ember'
+        }
       }
     ]
+  },
+  node: {
+    fs: 'empty'
   }
 }
