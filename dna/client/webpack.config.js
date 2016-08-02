@@ -8,12 +8,6 @@ module.exports = {
     'modulesDirectories': ['web_modules', 'node_modules', 'client/common']
   },
   'plugins': [
-    new webpack.ProvidePlugin({
-      'react': 'react-dom',
-      'riot': 'riot',
-      'oval': 'organic-oval',
-      'Vue': 'vue'
-    }),
     new ExtractTextPlugin('[name].css')
   ],
   'module': {
