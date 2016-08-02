@@ -13,7 +13,6 @@ module.exports = function (options) {
   require('domready')(function () {
     var result = options.requireTags()
     if (options.engine === 'oval') {
-
       // provide plasma
       oval.init(window.plasma)
 

@@ -1,3 +1,5 @@
+window.Vue = require('vue')
+
 require('cell')({
   engine: 'vue',
   requireTags: function () {
