@@ -26,7 +26,7 @@ Open see console's output respectively for every test:
   * re-render: 1934.954ms
   * remove item: 1395.817ms
   * add item: 1570.665ms
-  * timers: ~3000ms ~6000 updates
+  * timers: ~2266ms ~5499 updates, ~2.42 updates per ms
 * Riot 3 alpha 5
   * mount & render: N/A
   * re-render: 694.627ms
@@ -47,4 +47,4 @@ Open see console's output respectively for every test:
   * re-render: 775.713ms
   * remove item: 796.941ms
   * add item: 699.663ms
-  * timers: ~3000ms ~6000 updates
+  * timers: ~3327ms ~6660 updates, ~2.00 updates per ms
