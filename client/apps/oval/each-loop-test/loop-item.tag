@@ -1,12 +1,8 @@
 <loop-item>
   <script>
-    var rendered = false
     tag.items = [1, 2, 3]
-    tag.shouldRender = function () {
-      return !rendered
-    }
     tag.on('updated', function () {
-      rendered = true
+      tag.shouldRender = false
     })
   </script>
   <div>
