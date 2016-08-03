@@ -1,5 +1,5 @@
 require('cell')({
-  engine: 'oval',
+  engine: 'react',
   requireTags: function () {
     require('./landing-view')
   }

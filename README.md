@@ -9,11 +9,9 @@ $ angel develop
 
 ## usage
 
-Open one by one and see console's output respectively:
+Open see console's output respectively for every test:
 
-* http://127.0.0.1:1337/react
-* http://127.0.0.1:1337/riot
-* http://127.0.0.1:1337/oval
+* http://127.0.0.1:1337
 
 ## benchmarks dump
 
@@ -28,6 +26,7 @@ Open one by one and see console's output respectively:
   * re-render: 1934.954ms
   * remove item: 1395.817ms
   * add item: 1570.665ms
+  * timers: ~3000ms ~6000 updates
 * Riot 3 alpha 5
   * mount & render: N/A
   * re-render: 694.627ms
@@ -48,3 +47,4 @@ Open one by one and see console's output respectively:
   * re-render: 775.713ms
   * remove item: 796.941ms
   * add item: 699.663ms
+  * timers: ~3000ms ~6000 updates
