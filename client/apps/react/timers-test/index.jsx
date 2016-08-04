@@ -1,11 +1,11 @@
 var React = require('react')
 var Item = require('./timer-item')
-var count = 0
+var timerStats = require('timers-stats')
 
 module.exports = React.createClass({
   getInitialState: function () {
     var items = []
-    for (var i = 0; i < 5000; i++) {
+    for (var i = 0; i < 2000; i++) {
       items.push({id: i, value: Math.random() * 100})
     }
     return {
@@ -14,18 +14,11 @@ module.exports = React.createClass({
   },
 
   componentWillMount: function () {
-    console.time('time')
-    var intervalID = setInterval(function () {
-      console.log('updated per')
-      console.timeEnd('time')
-      console.log('count', count)
-      count = 0
-      console.time('time')
-    }, 1000)
+    timerStats.init(10)
   },
 
   captureUpdateStats: function () {
-    count += 1
+    timerStats.capture()
   },
 
   render: function() {
