@@ -9,11 +9,9 @@ $ angel develop
 
 ## usage
 
-Open one by one and see console's output respectively:
+Open see console's output respectively for every test:
 
-* http://127.0.0.1:1337/react
-* http://127.0.0.1:1337/riot
-* http://127.0.0.1:1337/oval
+* http://127.0.0.1:1337
 
 ## benchmarks dump
 
@@ -28,11 +26,13 @@ Open one by one and see console's output respectively:
   * re-render: 1934.954ms
   * remove item: 1395.817ms
   * add item: 1570.665ms
+  * timers rate: ~2.403
 * Riot 3 alpha 5
   * mount & render: N/A
   * re-render: 694.627ms
   * remove item: 1604.847ms
   * add item: 518.724ms
+  * timers rate: ~7.391
 * VueJS
   * mount & render: 8674.924ms
   * re-render: N/A
@@ -48,3 +48,4 @@ Open one by one and see console's output respectively:
   * re-render: 775.713ms
   * remove item: 796.941ms
   * add item: 699.663ms
+  * timers rate: ~3.307
