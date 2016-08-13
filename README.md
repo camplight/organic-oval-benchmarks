@@ -26,13 +26,13 @@ Open see console's output respectively for every test:
   * re-render: 1934.954ms
   * remove item: 1395.817ms
   * add item: 1570.665ms
-  * timers rate: ~2.309
+  * timers rate: ~2.309 (higher is better)
 * Riot 3 alpha 5
   * mount & render: N/A
   * re-render: 694.627ms
   * remove item: 1604.847ms
   * add item: 518.724ms
-  * timers rate: ~7.791
+  * timers rate: ~7.791 (higher is better)
 * VueJS
   * mount & render: 8674.924ms
   * re-render: N/A
@@ -44,8 +44,8 @@ Open see console's output respectively for every test:
   * remove item: 5201.263ms
   * add item: 1176.569ms
 * Oval
-  * mount & render: 1375.766ms
-  * re-render: 775.713ms
-  * remove item: 796.941ms
-  * add item: 699.663ms
-  * timers rate: ~4.492
+  * mount & render: 1593.238ms
+  * re-render: 197.349ms
+  * remove item: 193.591ms
+  * add item: 192.182ms
+  * timers rate: ~8.890 (higher is better)

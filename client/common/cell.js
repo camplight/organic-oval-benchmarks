@@ -18,10 +18,10 @@ module.exports = function (options) {
 
       if (options.beforeMount) {
         options.beforeMount(window.plasma, function () {
-          oval.mountAll('*', window.document)
+          oval.mountAll(document.body)
         })
       } else {
-        oval.mountAll('*', window.document)
+        oval.mountAll(document.body)
       }
     }
 
