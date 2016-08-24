@@ -43,6 +43,12 @@ Open see console's output respectively for every test:
   * re-render: 1045.420ms
   * remove item: 5201.263ms
   * add item: 1176.569ms
+* Mithril
+  * mount & render: 1823.320ms
+  * re-render: 865.806ms
+  * remove item: 978.133ms
+  * add item: 849.867ms
+  * timers rate: ~34.97:question: (visually unresponsive, higher is better)
 * Oval
   * mount & render: 1593.238ms
   * re-render: 197.349ms
