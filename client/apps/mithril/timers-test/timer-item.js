@@ -7,12 +7,9 @@ module.exports = {
 
     args.item.intervalID = setInterval(() => {
       args.item.value = Math.random() * 100
-      m.redraw()
     }, Math.random() * 10)
 
-    ctrl.config = (el, init, ctx) => {
-      args.capture()
-    }
+    ctrl.config = () => args.capture()
 
     return ctrl
   },
