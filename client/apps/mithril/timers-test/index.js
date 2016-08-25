@@ -16,6 +16,8 @@ module.exports = {
       })
     }
 
+    setInterval(() => m.redraw(), 10)
+
     ctrl.captureUpdateStats = () => timerStats.capture()
     timerStats.init(10)
 
