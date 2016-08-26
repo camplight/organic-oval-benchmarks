@@ -3,10 +3,10 @@ var m = window.mithril
 var Item = require('./item')
 
 module.exports = {
-  controller: function () {
+  oninit: function (vnode) {
     console.time('each-loop-mount')
+    var ctrl = this
 
-    var ctrl = {}
     ctrl.items = []
     for (var i = 0; i < 10000; i++) {
       ctrl.items.push({value: i, id: Math.random()})
@@ -16,26 +16,24 @@ module.exports = {
       ctrl.items.push({value: ctrl.items.length, id: Math.random()})
     }
     ctrl.refresh = () => {
-      m.startComputation()
-      m.endComputation()
+      m.redraw()
     }
     ctrl.removeItem = (item) => () => {
       ctrl.items.splice(ctrl.items.indexOf(item), 1)
     }
 
-    ctrl.config = (el, init, ctx) => {
-      if (!init) {
-        console.timeEnd('each-loop-mount')
-      }
+    ctrl.oncreate = (vnode) => {
+      console.timeEnd('each-loop-mount')
+    }
+    ctrl.onupdate = (vnode) => {
       console.timeEnd('each-loop')
     }
-
-    return ctrl
   },
-  view: (ctrl) => {
+  view: (vnode) => {
     console.time('each-loop')
+    var ctrl = vnode.state
     return (
-      m('div', {config: ctrl.config}, [
+      m('div', {oncreate: ctrl.oncreate, onupdate: ctrl.onupdate}, [
         m('h1', 'Each Loop test'),
         m('button', {onclick: ctrl.addItem}, 'add item'),
         m('button', {onclick: ctrl.refresh}, 'refresh'),

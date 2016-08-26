@@ -3,9 +3,9 @@ var m = window.mithril
 var Item = require('./timer-item')
 
 module.exports = {
-  controller: function () {
+  oninit: function (vnode) {
     var timerStats = require('timers-stats')
-    var ctrl = {}
+    var ctrl = this
 
     ctrl.items = []
     for (var i = 0; i < 2000; i++) {
@@ -18,11 +18,9 @@ module.exports = {
 
     ctrl.captureUpdateStats = () => timerStats.capture()
     timerStats.init(10)
-
-    return ctrl
   },
-  view: (ctrl) =>
-    ctrl.items.map((item) =>
-      m(Item, {item, capture: ctrl.captureUpdateStats})
+  view: (vnode) =>
+    vnode.state.items.map((item) =>
+      m(Item, {item, capture: vnode.state.captureUpdateStats})
     )
 }
