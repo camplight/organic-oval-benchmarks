@@ -2,20 +2,22 @@
 var m = window.mithril
 
 module.exports = {
-  controller: function (args) {
-    var ctrl = {}
+  oninit: function (vnode) {
+    var ctrl = this
+    var args = vnode.attrs
 
     args.item.intervalID = setInterval(() => {
       args.item.value = Math.random() * 100
       m.redraw()
     }, Math.random() * 10)
 
-    ctrl.config = (el, init, ctx) => {
-      args.capture()
-    }
+    ctrl.onupdate = () => args.capture()
 
     return ctrl
   },
-  view: (ctrl, args) =>
-    m('div', {config: ctrl.config}, args.item.id + ' - ', args.item.value)
+  view: (vnode) =>
+    m('div',
+      {onupdate: vnode.state.onupdate},
+      vnode.attrs.item.id + ' - ', vnode.attrs.item.value
+    )
 }
