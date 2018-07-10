@@ -1,0 +1,15 @@
+{
+  "name": "preact",
+  "scripts": {
+    "develop": "rm -rf ./.cache && parcel ./index.html -p 4200"
+  },
+  "dependencies": {
+    "preact": "^8.2.9",
+    "preact-compat": "^3.18.0"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-preact": "^1.1.0",
+    "parcel-bundler": "^1.9.2"
+  }
+}

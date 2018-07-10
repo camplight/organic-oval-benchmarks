@@ -1,9 +1,0 @@
-{
-  "ignore": [
-    "client/**/*",
-    "scripts/**/*",
-    "public/**/*",
-    "build/**/*",
-    "node_modules/**/*"
-  ]
-}

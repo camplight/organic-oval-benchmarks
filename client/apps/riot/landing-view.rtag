@@ -1,4 +1,0 @@
-require('./each-loop-test')
-<landing-view>
-  <each-loop-test></each-loop-test>
-</landing-view>
