@@ -4,6 +4,7 @@
 
 ```
 $ npm install
+$ npx angel repo cells -- npm install
 $ npx devshell
 ```
 
@@ -23,5 +24,5 @@ Open see console's output respectively for every test:
 
 Framework | mount & render | re-render | remove item | add item 
 :--       | :--            | :--       | :--         | :--      
-PReact    | ~500ms         | ~100ms    | ~100ms      | ~100ms
-Oval      | ~800ms         | ~150ms    | ~150ms      | ~150ms
+PReact v8 | ~500ms         | ~100ms    | ~100ms      | ~100ms
+Oval v5   | ~800ms         | ~150ms    | ~150ms      | ~150ms
