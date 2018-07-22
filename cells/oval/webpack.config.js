@@ -35,8 +35,7 @@ module.exports = {
         test: /\.tag$/,
         exclude: /node_modules/,
         use: [
-          {loader: 'organic-oval/webpack/oval-loader'},
-          {loader: 'organic-oval/webpack/oval-control-statements-loader'}
+          {loader: 'organic-oval/webpack/oval-loader'}
         ]
       }
     ]
