@@ -1,4 +1,12 @@
 {
-  "oval": {},
-  "preact": {}
+  "oval": {
+    "cellInfo": "v1",
+    "cellKind": "webapp",
+    "cwd": "cells/oval"
+  },
+  "preact": {
+    "cellInfo": "v1",
+    "cellKind": "webapp",
+    "cwd": "cells/preact"
+  }
 }

@@ -9,7 +9,7 @@
     "angelscripts-help": "^0.2.0",
     "angelscripts-monorepo": "^1.1.1",
     "organic-angel": "^0.3.2",
-    "organic-stem-devshell": "github:node-organic/organic-stem-devshell"
+    "organic-stem-devshell": "github:node-organic/organic-stem-devshell#v3.7.0"
   },
   "devDependencies": {
     "eslint": "^4.18.2",
